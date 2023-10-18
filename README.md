@@ -1,6 +1,6 @@
 <h1 align="center">Task Management React App  📝</h1>  
 <p align="center">
-  🖊️ A simple Todo App built using <a href="https://reactjs.org/">React</a> </a>
+  🖊️ A simple Task Management App built using <a href="https://reactjs.org/">React</a> </a>
 </p>
 
 ## This is a simple Task Management React App built using React.js and Node.js .
