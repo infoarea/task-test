@@ -7,7 +7,7 @@ export const getAllPermission = createAsyncThunk(
   async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5050/api/v1/permission",
+        "https://task-api-mopy.onrender.com/api/v1/permission",
         { withCredentials: true }
       );
 
@@ -24,7 +24,7 @@ export const createPermission = createAsyncThunk(
   async (data) => {
     try {
       const response = await axios.post(
-        "http://localhost:5050/api/v1/permission",
+        "https://task-api-mopy.onrender.com/api/v1/permission",
         data,
         { withCredentials: true }
       );
@@ -41,9 +41,12 @@ export const deletePermission = createAsyncThunk(
   "user/deletePermission",
   async (id) => {
     try {
-      await axios.delete(`http://localhost:5050/api/v1/permission/${id}`, {
-        withCredentials: true,
-      });
+      await axios.delete(
+        `https://task-api-mopy.onrender.com/api/v1/permission/${id}`,
+        {
+          withCredentials: true,
+        }
+      );
 
       return id;
     } catch (error) {
@@ -58,7 +61,7 @@ export const updatePermissionStatus = createAsyncThunk(
   async ({ id, status }) => {
     try {
       const response = await axios.patch(
-        `http://localhost:5050/api/v1/permission/permission-status/${id}`,
+        `https://task-api-mopy.onrender.com/api/v1/permission/permission-status/${id}`,
         { status },
         {
           withCredentials: true,
@@ -75,9 +78,12 @@ export const updatePermissionStatus = createAsyncThunk(
 //Get all Role
 export const getAllRoles = createAsyncThunk("user/getAllRoles", async () => {
   try {
-    const response = await axios.get("http://localhost:5050/api/v1/role", {
-      withCredentials: true,
-    });
+    const response = await axios.get(
+      "https://task-api-mopy.onrender.com/api/v1/role",
+      {
+        withCredentials: true,
+      }
+    );
 
     return response.data;
   } catch (error) {
@@ -89,7 +95,7 @@ export const getAllRoles = createAsyncThunk("user/getAllRoles", async () => {
 export const createRole = createAsyncThunk("user/createRole", async (data) => {
   try {
     const response = await axios.post(
-      "http://localhost:5050/api/v1/role",
+      "https://task-api-mopy.onrender.com/api/v1/role",
       data,
       { withCredentials: true }
     );
@@ -104,7 +110,7 @@ export const createRole = createAsyncThunk("user/createRole", async (data) => {
 export const updateRole = createAsyncThunk("user/updateRole", async (data) => {
   try {
     const response = await axios.put(
-      `http://localhost:5050/api/v1/role/${data.id}`,
+      `https://task-api-mopy.onrender.com/api/v1/role/${data.id}`,
       data,
       {
         withCredentials: true,
@@ -120,7 +126,7 @@ export const updateRole = createAsyncThunk("user/updateRole", async (data) => {
 //Delete Role
 export const deleteRole = createAsyncThunk("user/deleteRole", async (id) => {
   try {
-    await axios.delete(`http://localhost:5050/api/v1/role/${id}`, {
+    await axios.delete(`https://task-api-mopy.onrender.com/api/v1/role/${id}`, {
       withCredentials: true,
     });
 
@@ -136,7 +142,7 @@ export const updateRoleStatus = createAsyncThunk(
   async ({ id, status }) => {
     try {
       const response = await axios.patch(
-        `http://localhost:5050/api/v1/role/role-status/${id}`,
+        `https://task-api-mopy.onrender.com/api/v1/role/role-status/${id}`,
         { status },
         {
           withCredentials: true,
@@ -153,9 +159,12 @@ export const updateRoleStatus = createAsyncThunk(
 //Get all Users
 export const getAllUsers = createAsyncThunk("user/getAllUsers", async () => {
   try {
-    const response = await axios.get("http://localhost:5050/api/v1/user", {
-      withCredentials: true,
-    });
+    const response = await axios.get(
+      "https://task-api-mopy.onrender.com/api/v1/user",
+      {
+        withCredentials: true,
+      }
+    );
 
     return response.data;
   } catch (error) {
@@ -167,7 +176,7 @@ export const getAllUsers = createAsyncThunk("user/getAllUsers", async () => {
 export const userCreate = createAsyncThunk("user/userCreate", async (data) => {
   try {
     const response = await axios.post(
-      "http://localhost:5050/api/v1/user",
+      "https://task-api-mopy.onrender.com/api/v1/user",
       data,
       { withCredentials: true }
     );
@@ -181,7 +190,7 @@ export const userCreate = createAsyncThunk("user/userCreate", async (data) => {
 //Delete User
 export const deleteUser = createAsyncThunk("user/deleteUser", async (id) => {
   try {
-    await axios.delete(`http://localhost:5050/api/v1/user/${id}`, {
+    await axios.delete(`https://task-api-mopy.onrender.com/api/v1/user/${id}`, {
       withCredentials: true,
     });
 
@@ -195,7 +204,7 @@ export const deleteUser = createAsyncThunk("user/deleteUser", async (id) => {
 export const updateUser = createAsyncThunk("user/updateUser", async (data) => {
   try {
     const response = await axios.put(
-      `http://localhost:5050/api/v1/user/${data.id}`,
+      `https://task-api-mopy.onrender.com/api/v1/user/${data.id}`,
       data,
       {
         withCredentials: true,
@@ -214,7 +223,7 @@ export const updateUserPassword = createAsyncThunk(
   async (data) => {
     try {
       const response = await axios.patch(
-        `http://localhost:5050/api/v1/user/${data.id}`,
+        `https://task-api-mopy.onrender.com/api/v1/user/${data.id}`,
         data.passwordData,
         {
           withCredentials: true,
@@ -233,7 +242,7 @@ export const updateUserProfilePicture = createAsyncThunk(
   async ({ id, data }) => {
     try {
       const response = await axios.put(
-        `http://localhost:5050/api/v1/user/profile/${id}`,
+        `https://task-api-mopy.onrender.com/api/v1/user/profile/${id}`,
         data,
         {
           withCredentials: true,
@@ -253,7 +262,7 @@ export const UpdateUserStatus = createAsyncThunk(
   async ({ id, status }) => {
     try {
       const response = await axios.patch(
-        `http://localhost:5050/api/v1/user/user-status/${id}`,
+        `https://task-api-mopy.onrender.com/api/v1/user/user-status/${id}`,
         { status },
         {
           withCredentials: true,

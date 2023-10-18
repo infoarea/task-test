@@ -5,7 +5,7 @@ import axios from "axios";
 export const createUser = createAsyncThunk("auth/createUser", async (data) => {
   try {
     const response = await axios.post(
-      "http://localhost:5050/api/v1/auth/register",
+      "https://task-api-mopy.onrender.com/api/v1/auth/register",
       data,
       { withCredentials: true }
     );
@@ -20,7 +20,7 @@ export const createUser = createAsyncThunk("auth/createUser", async (data) => {
 export const loginUser = createAsyncThunk("auth/loginUser", async (data) => {
   try {
     const response = await axios.post(
-      "http://localhost:5050/api/v1/auth/login",
+      "https://task-api-mopy.onrender.com/api/v1/auth/login",
       data,
       { withCredentials: true }
     );
@@ -35,7 +35,7 @@ export const loginUser = createAsyncThunk("auth/loginUser", async (data) => {
 export const logoutUser = createAsyncThunk("auth/logoutUser", async () => {
   try {
     const response = await axios.post(
-      "http://localhost:5050/api/v1/auth/logout",
+      "https://task-api-mopy.onrender.com/api/v1/auth/logout",
       "",
       {
         withCredentials: true,
@@ -54,9 +54,12 @@ export const getLoggedInUser = createAsyncThunk(
   "auth/getLoggedInUser",
   async () => {
     try {
-      const response = await axios.get("http://localhost:5050/api/v1/auth/me", {
-        withCredentials: true,
-      });
+      const response = await axios.get(
+        "https://task-api-mopy.onrender.com/api/v1/auth/me",
+        {
+          withCredentials: true,
+        }
+      );
 
       return response.data;
     } catch (error) {
