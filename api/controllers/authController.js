@@ -14,21 +14,21 @@ export const userLogin = asyncHandler(async (req, res) => {
 
   //validate
   if (!email || !password) {
-    res.status(400).json({ message: "All fields are required!" });
+    return res.status(400).json({ message: "All fields are required!" });
   }
 
   //Find login user by email
   const loginUser = await User.findOne({ email }).populate("role");
 
   if (!loginUser) {
-    res.status(400).json({ message: "User not found!" });
+    return res.status(400).json({ message: "User not found!" });
   }
 
   //password check
   const passCheck = await bcrypt.compare(password, loginUser.password);
 
   if (!passCheck) {
-    res.status(400).json({ message: "Wrong password" });
+    return res.status(400).json({ message: "Wrong password" });
   }
 
   //access token
@@ -53,10 +53,10 @@ export const userLogin = asyncHandler(async (req, res) => {
     maxAge: 1000 * 60 * 60 * 24 * 15,
   });
 
-  res.status(200).json({
+  res.json({
     token: accessToken,
     user: loginUser,
-    message: "User Logged in successful",
+    message: "User Logged in successfully",
   });
 });
 
@@ -116,7 +116,7 @@ export const userLogout = (req, res) => {
       httpOnly: true,
       secure: false,
     })
-    .json({ message: "Logged out okay" });
+    .json({ message: "Logged out" });
 };
 
 /**
@@ -158,5 +158,9 @@ export const userRegister = asyncHandler(async (req, res) => {
  * @access PUBLIC
  */
 export const loggedInUser = asyncHandler(async (req, res) => {
+  if (!req.me) {
+    return res.status(200).json({ message: "User not found" });
+  }
+
   res.status(200).json(req.me);
 });
