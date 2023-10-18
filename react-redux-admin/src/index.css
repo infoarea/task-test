@@ -1,0 +1,118 @@
+.dataTables_filter {
+  display: none;
+}
+.dataTables_length select {
+  border: 1px solid #e9e9e9;
+  padding: 3px 4px;
+  border-radius: 4px;
+}
+.dataTables_paginate {
+  display: flex;
+  gap: 10px;
+  position: absolute;
+  right: 30px;
+  bottom: 25px;
+}
+.card-body {
+  padding: 1.5rem !important;
+}
+
+.brand-table .rdt_TableHeadRow {
+  font-size: 18px !important;
+}
+.brand-table .rdt_TableBody div {
+  font-size: 15px !important;
+}
+label.profile_change input[type="file"] {
+  opacity: 0;
+  width: 70px;
+}
+label.profile_change img:hover {
+  cursor: pointer;
+}
+.meta_data {
+  gap: 15px;
+}
+p.task_time i {
+  color: #ff8c4b;
+  font-size: 22px;
+  margin-right: 7px;
+}
+p.task_time {
+  background: #fff1e9;
+  padding: 6px 10px;
+  display: flex;
+  align-items: center;
+  border-radius: 3px;
+}
+p.task_cat {
+  background: #a144ff26;
+  padding: 6px 10px;
+  display: flex;
+  align-items: center;
+  border-radius: 3px;
+}
+p.task_cat i {
+  color: #8919fbcf;
+  font-size: 22px;
+  margin-right: 7px;
+}
+p.task_level {
+  background: #d1fadf;
+  padding: 6px 10px;
+  display: flex;
+  align-items: center;
+  border-radius: 3px;
+}
+p.task_level i {
+  color: #12b76a;
+  font-size: 22px;
+  margin-right: 7px;
+}
+@media (min-width: 768px) {
+  label.profile_change input[type="file"] {
+    opacity: 0;
+    position: relative;
+  }
+  label.profile_change img {
+    position: absolute;
+    left: 0;
+    width: 70px;
+    height: 70px;
+  }
+  label.profile_change button {
+    margin-top: 23px;
+  }
+  .meta_data {
+    display: flex;
+    gap: 15px;
+  }
+}
+@media (max-width: 767px) {
+  .task_file img {
+    left: 49% !important;
+  }
+}
+
+.login-wrapper .loginbox .login-left {
+  background: linear-gradient(180deg, #131c31, #0f172a) !important;
+}
+.task_file input {
+  opacity: 0;
+  position: relative;
+  z-index: 9999;
+  cursor: pointer;
+  width: 70px;
+}
+.task_file img {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  left: 22%;
+  top: 30px;
+}
+.task_btn {
+  background-color: #ffcd33 !important;
+  font-weight: 600 !important;
+  font-size: 16px !important;
+}
