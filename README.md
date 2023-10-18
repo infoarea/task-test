@@ -21,7 +21,6 @@ You can view a live demo of the project here: https://github.com/infoarea/task-t
 - 🔎 Task Status Tracking: Users can mark tasks as "To-Do," "In Progress,"
   or "Completed."
 - 🔎 Data Search: Implement search and filtering options to easily find tasks.
-- 🖋️ Data Search: Implement search and filtering options to easily find tasks.
 - ⏸ Realtime Data: Save tasks to MongoDB Database & Local Storage when the state changes.
 - ▶️ Load the all data from Local Storage when the site is loaded again.
 
